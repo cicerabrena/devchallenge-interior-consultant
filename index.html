@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/images/devchallenges.png" type="image/x-icon">
+  <title>Interior Consultant</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <p>This interior</p>
+    <nav class="navbar navbar__mobile" id="nav-mobile">
+      <ul>
+        <li class="active">Home</li>
+        <li>Collection</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+      <span class="material-icons" id="button-menu">menu</span>
+    </nav>
+  </header>
+  <main></main>
+  <footer>
+    created by <a href="https://github.com/cicerabrena" target="_blank">@cicerabrens</a> - devChallenges.io
+  </footer>
+</body>
+
+<script>  
+  const buttonMenu = document.getElementById('button-menu');
+  const navMobile = document.getElementById('nav-mobile');
+
+  buttonMenu.addEventListener('click', e => {
+    
+    const actualIcon = e.currentTarget.innerText;
+    e.currentTarget.innerText = actualIcon == "menu" ? "close" : "menu";
+
+    if (actualIcon == "menu") {
+      navMobile.classList.add("open");
+    } else{
+      navMobile.classList.remove("open");
+    }
+
+
+  })
+
+
+</script>
+</html>
