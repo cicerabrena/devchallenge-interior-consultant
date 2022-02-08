@@ -14,7 +14,7 @@
 <body>
   <header>
     <p>This interior</p>
-    <nav class="navbar navbar__mobile" id="nav-mobile">
+    <nav class="navbar">
       <ul>
         <li class="active">Home</li>
         <li>Collection</li>
@@ -24,7 +24,24 @@
       <span class="material-icons" id="button-menu">menu</span>
     </nav>
   </header>
-  <main></main>
+  <main>
+    <h2>Modern interior</h2>
+    <p>A full-Service residential & commercial interior design and staging company offering professional organizing & eco-services.</p>
+    <a href="#">Read more <span class="material-icons">arrow_right_alt</span></a>
+    <div class="floating-images">
+      <img src="./assets/images/photo1.png" alt="Photo 1" class="bottom">
+      <div class="box">
+          <div class="head">
+            <img src="./assets/images/photo2.png" alt="Photo 2">
+            <div class="subcontent">
+              <h3>Aliza Webber</h3>
+              <p>Interior designer</p>
+            </div>
+          </div>
+          <p>Designed in 2020 by Aliza Webber</p>
+      </div>
+    </div>
+  </main>
   <footer>
     created by <a href="https://github.com/cicerabrena" target="_blank">@cicerabrens</a> - devChallenges.io
   </footer>
@@ -32,7 +49,7 @@
 
 <script>  
   const buttonMenu = document.getElementById('button-menu');
-  const navMobile = document.getElementById('nav-mobile');
+  const navBar = document.querySelector('.navbar');
 
   buttonMenu.addEventListener('click', e => {
     
@@ -40,9 +57,11 @@
     e.currentTarget.innerText = actualIcon == "menu" ? "close" : "menu";
 
     if (actualIcon == "menu") {
-      navMobile.classList.add("open");
+      navBar.classList.add("open");
+      navBar.classList.remove("close");
     } else{
-      navMobile.classList.remove("open");
+      navBar.classList.remove("open");
+      navBar.classList.add("close");
     }
 
 
