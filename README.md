@@ -6,7 +6,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://cicerabrena.github.io/devchallenge-interipr-consultant/" target="_blank">
+    <a href="https://cicerabrena.github.io/devchallenge-interior-consultant/" target="_blank">
       Demo
     </a>
     <span> | </span>
