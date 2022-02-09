@@ -15,6 +15,11 @@ body {
   font-size: 14px;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 header {
   height: 45px;
   display: flex;
@@ -77,98 +82,173 @@ header nav ul li.active {
   font-weight: 700;
   position: relative;
 }
-header nav ul li.active::after {
-  content: "";
-  width: inherit;
-  height: 20px;
-  position: absolute;
-  right: 0;
-  left: 0;
+header nav ul li.active a {
+  padding-bottom: 0.4rem;
   border-bottom: 2px solid white;
 }
-header nav ul li:hover {
-  padding-bottom: 0.2rem;
+header nav ul li a:hover {
+  padding-bottom: 0.4rem;
   border-bottom: 2px solid white;
 }
 header nav span {
+  display: block;
   cursor: pointer;
+}
+@media (min-width: 768px) {
+  header {
+    padding: 0 3rem;
+  }
+  header nav {
+    max-width: 600px;
+  }
+  header nav span.material-icons {
+    display: none;
+  }
+  header nav ul {
+    opacity: 1;
+    display: flex;
+    height: auto;
+  }
+  header nav ul li {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    margin-top: 0;
+  }
 }
 
 main {
-  display: flex;
-  flex-direction: column;
   flex: 1;
   margin-top: 1.5rem;
   font-family: "Montserrat", sans-serif;
 }
-main h2 {
+main .container {
+  display: flex;
+  flex-direction: column;
+}
+main .container .box-left h2 {
   font-family: "Lora", serif;
   font-weight: 500;
   font-size: 2rem;
 }
-main p {
+main .container .box-left p {
   width: 230px;
-  display: block;
   margin: 1rem 0;
 }
-main a {
+main .container .box-left a {
   display: flex;
   align-items: center;
-  text-decoration: none;
   font-weight: 700;
-  color: white;
   margin-bottom: 1.5rem;
 }
-main a span {
+main .container .box-left a span {
   padding-left: 0.6rem;
 }
-main .floating-images {
+main .container .box-right {
   position: relative;
 }
-main .floating-images img {
+main .container .box-right img {
   width: 100%;
   object-fit: fill;
 }
-main .floating-images .box {
+main .container .box-right .inside-box {
   background-color: #181719;
-  width: 290px;
-  height: 110px;
+  width: 280px;
+  height: 130px;
   position: absolute;
   right: 10px;
-  bottom: -50px;
-  box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.2);
+  bottom: -80px;
   padding: 1rem 1.5rem;
+  box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.2);
 }
-main .floating-images .box .head {
+main .container .box-right .inside-box .head {
   display: flex;
   font-family: "Montserrat", sans-serif;
   align-items: center;
+  margin-bottom: 0.7rem;
 }
-main .floating-images .box .head img {
+main .container .box-right .inside-box .head img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
-main .floating-images .box .head .subcontent {
+main .container .box-right .inside-box .head .subcontent {
   margin-left: 1rem;
 }
-main .floating-images .box .head .subcontent h3 {
+main .container .box-right .inside-box .head .subcontent h3 {
   font-size: 0.7rem;
   font-weight: normal;
 }
-main .floating-images .box .head .subcontent p {
+main .container .box-right .inside-box .head .subcontent p {
   margin: 0.1rem 0 0 0;
   color: #828282;
   font-size: 0.5rem;
 }
-main .floating-images .box p {
+main .container .box-right .inside-box p {
   font-family: "Lora", serif;
   font-weight: 700;
   font-size: 1rem;
 }
+@media (min-width: 768px) {
+  main {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+  }
+  main .container {
+    max-width: 1000px;
+    flex-direction: row;
+    align-items: center;
+  }
+  main .container .box-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+  }
+  main .container .box-left h2 {
+    font-size: 2.5rem;
+  }
+  main .container .box-left p {
+    font-size: 1rem;
+  }
+  main .container .box-left a {
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+  main .container .box-right {
+    flex: 0 0 60%;
+  }
+  main .container .box-right .inside-box {
+    width: 350px;
+    height: 180px;
+    right: 30px;
+    bottom: -105px;
+    padding: 1rem 2rem;
+  }
+  main .container .box-right .inside-box .head {
+    margin-bottom: 1.4rem;
+  }
+  main .container .box-right .inside-box .head img {
+    width: 50px;
+    height: 50px;
+  }
+  main .container .box-right .inside-box .head .subcontent h3 {
+    font-size: 0.9rem;
+  }
+  main .container .box-right .inside-box .head .subcontent p {
+    margin-top: 0.4rem;
+    font-size: 0.7rem;
+  }
+  main .container .box-right .inside-box p {
+    width: 240px;
+    font-size: 1.5rem;
+  }
+}
 
 footer {
-  margin-top: 10rem;
+  margin-top: 4rem;
+  padding: 2rem 0;
   height: 35px;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -183,6 +263,11 @@ footer a {
   font-size: inherit;
   font-weight: 700;
   text-decoration: none;
+}
+@media (min-width: 768px) {
+  footer {
+    margin-top: 0;
+  }
 }
 
 @keyframes fade-in {
